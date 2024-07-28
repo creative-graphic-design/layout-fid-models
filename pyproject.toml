@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "layout-fid-models"
+version = "0.1.0"
+description = ""
+authors = ["Shunsuke KITADA <shunsuke.kitada.0831@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "layout_fidnet_v3" }]
+
+
+[tool.poetry.dependencies]
+python = "^3.10"
+transformers = { version = ">=4.0.0", extras = ["torch"] }
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = ">=0.1.5"
+pytest = ">=6.0.0"
+mypy = ">=1.0.0"
+
+[tool.ruff.lint]
+ignore = [
+    "E741", # ambiguous variable name
+]
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
